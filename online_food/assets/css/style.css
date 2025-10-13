@@ -1,0 +1,45 @@
+body {
+  background-color: #faf9ff;
+  font-family: 'Poppins', sans-serif;
+}
+
+.card {
+  box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+  border-radius: 15px;
+}
+
+.navbar-brand {
+  font-weight: bold;
+  color: lavender !important;
+}
+
+.btn-primary {
+  background-color: #7b68ee;
+  border: none;
+}
+
+.table th {
+  background-color: #7b68ee;
+  color: white;
+}
+
+.btn-success {
+  background-color: #4CAF50;
+}
+
+.badge {
+  font-size: 0.9em;
+  padding: 6px 10px;
+}
+
+body {
+  background-color: #fafafa;
+  font-family: 'Poppins', sans-serif;
+}
+.card {
+  border-radius: 15px;
+  transition: transform 0.3s ease;
+}
+.card:hover {
+  transform: scale(1.05);
+}
