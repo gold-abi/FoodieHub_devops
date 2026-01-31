@@ -10,13 +10,13 @@ pipeline {
 
         stage('Build Docker Image') {
             steps {
-                sh 'docker build -t FoodieHub/food-app:latest .'
+                sh 'docker build -t goldabi/food-app:latest .'
             }
         }
 
         stage('Push Image') {
             steps {
-                sh 'docker push FoodieHub/food-app:latest'
+                sh 'docker push goldabi/food-app:latest'
             }
         }
 
