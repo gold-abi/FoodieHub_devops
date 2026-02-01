@@ -1,7 +1,5 @@
 <?php
-if (session_status() === PHP_SESSION_NONE) {
-    session_start();
-}
+
 
 $servername = getenv("DB_HOST");
 $username   = getenv("DB_USER");
@@ -15,4 +13,5 @@ if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
 ?>
+
 
