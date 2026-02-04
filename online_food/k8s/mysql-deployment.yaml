@@ -2,6 +2,8 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: mysql
+  labels:
+    app: mysql
 spec:
   replicas: 1
   selector:
@@ -19,6 +21,13 @@ spec:
             - containerPort: 3306
           env:
             - name: MYSQL_ROOT_PASSWORD
-              value: ""
+              value: "root"
             - name: MYSQL_DATABASE
               value: food_order_db
+          volumeMounts:
+            - name: mysql-storage
+              mountPath: /var/lib/mysql
+      volumes:
+        - name: mysql-storage
+          persistentVolumeClaim:
+            claimName: mysql-pvc
