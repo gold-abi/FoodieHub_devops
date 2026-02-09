@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: food-app
-          image: FoodieHub/food-app:latest
+          image: abirami2006/food-app:latest
           ports:
             - containerPort: 80
           env:
@@ -23,6 +23,6 @@ spec:
             - name: DB_USER
               value: root
             - name: DB_PASS
-              value: ""
+              value: root
             - name: DB_NAME
               value: food_order_db

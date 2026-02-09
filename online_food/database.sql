@@ -1,4 +1,4 @@
-CREATE DATABASE food_order_db;
+
 USE food_order_db;
 
 -- Users Table
