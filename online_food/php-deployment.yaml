@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: foodiehub-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: foodiehub
+  template:
+    metadata:
+      labels:
+        app: foodiehub
+    spec:
+      containers:
+        - name: foodiehub
+          image: abirami2006/online_food-php
+          env:
+            - name: DB_HOST
+              value: mysql
+            - name: DB_USER
+              value: root
+            - name: DB_PASS
+              value: root
+            - name: DB_NAME
+              value: food_order_db
+          ports:
+            - containerPort: 80
