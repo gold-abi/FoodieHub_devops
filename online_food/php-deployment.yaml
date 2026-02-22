@@ -15,14 +15,41 @@ spec:
       containers:
         - name: foodiehub
           image: abirami2006/online_food-php
+
           env:
             - name: DB_HOST
               value: mysql
             - name: DB_USER
               value: root
             - name: DB_PASS
-              value: root
+              valueFrom:
+                secretKeyRef:
+                  name: mysql-secret
+                  key: MYSQL_ROOT_PASSWORD
             - name: DB_NAME
               value: food_order_db
+
           ports:
             - containerPort: 80
+
+          resources:
+            requests:
+              memory: "128Mi"
+              cpu: "200m"
+            limits:
+              memory: "256Mi"
+              cpu: "400m"
+
+          livenessProbe:
+            httpGet:
+              path: /
+              port: 80
+            initialDelaySeconds: 30
+            periodSeconds: 10
+
+          readinessProbe:
+            httpGet:
+              path: /
+              port: 80
+            initialDelaySeconds: 10
+            periodSeconds: 5
